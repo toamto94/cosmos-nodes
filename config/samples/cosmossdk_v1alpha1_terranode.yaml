@@ -1,0 +1,6 @@
+apiVersion: cosmossdk.my.domain/v1alpha1
+kind: TerraNode
+metadata:
+  name: terranode-sample
+spec:
+  # TODO(user): Add fields here

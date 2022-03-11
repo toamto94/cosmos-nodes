@@ -1,0 +1,24 @@
+# permissions for end users to edit terranodes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: terranode-editor-role
+rules:
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes/status
+  verbs:
+  - get
