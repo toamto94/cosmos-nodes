@@ -1,0 +1,20 @@
+# permissions for end users to view terranodes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: terranode-viewer-role
+rules:
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes/status
+  verbs:
+  - get

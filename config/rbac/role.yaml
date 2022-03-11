@@ -1,0 +1,34 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cosmossdk.my.domain
+  resources:
+  - terranodes/status
+  verbs:
+  - get
+  - patch
+  - update
